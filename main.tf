@@ -28,6 +28,7 @@ module "sagemaker_notebook" {
   s3_bucket_name = module.s3_bucket.bucket_name
   file_name = "picture.png"
   file_source = "./picture.png"
+  repository_url = "https://github.com/juic3pow3rs/terraform-aws-sagemaker-notebook.git"
 
   environment      = local.environment
   role             = local.role
