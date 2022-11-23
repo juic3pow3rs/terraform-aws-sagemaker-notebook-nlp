@@ -1,0 +1,3 @@
+[submodule "terraform-aws-modules"]
+	path = terraform-aws-modules
+	url = https://github.com/juic3pow3rs/terraform-aws-modules.git
