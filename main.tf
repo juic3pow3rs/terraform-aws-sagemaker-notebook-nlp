@@ -19,6 +19,7 @@ module "s3_bucket" {
   team             = local.team
 }
 
+/* Uebung 01
 module "sagemaker_notebook" {
   source = "./terraform-aws-modules/sagemaker_notebook"
   providers = {
@@ -28,6 +29,26 @@ module "sagemaker_notebook" {
   s3_bucket_name = module.s3_bucket.bucket_name
   file_name      = "picture.png"
   file_source    = "./picture.png"
+  repository_url = "https://github.com/juic3pow3rs/terraform-aws-sagemaker-notebook.git"
+
+  environment      = local.environment
+  role             = local.role
+  project          = local.project
+  template_version = local.template_version
+  team             = local.team
+}
+
+*/
+
+module "sagemaker_notebook" {
+  source = "./terraform-aws-modules/sagemaker_notebook"
+  providers = {
+    aws = aws.ffm
+  }
+
+  s3_bucket_name = module.s3_bucket.bucket_name
+  file_name      = "orders_with_predicted_value.csv"
+  file_source    = "./data/orders_with_predicted_value.csv"
   repository_url = "https://github.com/juic3pow3rs/terraform-aws-sagemaker-notebook.git"
 
   environment      = local.environment
