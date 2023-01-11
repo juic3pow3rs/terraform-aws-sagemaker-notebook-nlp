@@ -47,8 +47,8 @@ module "sagemaker_notebook" {
   }
 
   s3_bucket_name = module.s3_bucket.bucket_name
-  file_name      = "activities.csv"
-  file_source    = "./data/activities.csv"
+  file_name      = "meter_data.csv"
+  file_source    = "./data/meter_data.csv"
   repository_url = "https://github.com/juic3pow3rs/terraform-aws-sagemaker-notebook.git"
 
   environment      = local.environment
