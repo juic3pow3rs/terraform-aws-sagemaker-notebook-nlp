@@ -3,8 +3,8 @@ locals {
   environment      = "dev"
   project          = "ws2223"
   template_version = "0.0.1"
-  team             = "andizzo"
-  role             = "cloud02"
+  team             = "nlp"
+  role             = "draft01"
 }
 
 module "s3_bucket" {
@@ -19,37 +19,13 @@ module "s3_bucket" {
   team             = local.team
 }
 
-/* Uebung 01
 module "sagemaker_notebook" {
   source = "./terraform-aws-modules/sagemaker_notebook"
   providers = {
     aws = aws.ffm
   }
 
-  s3_bucket_name = module.s3_bucket.bucket_name
-  file_name      = "picture.png"
-  file_source    = "./picture.png"
-  repository_url = "https://github.com/juic3pow3rs/terraform-aws-sagemaker-notebook.git"
-
-  environment      = local.environment
-  role             = local.role
-  project          = local.project
-  template_version = local.template_version
-  team             = local.team
-}
-
-*/
-
-module "sagemaker_notebook" {
-  source = "./terraform-aws-modules/sagemaker_notebook"
-  providers = {
-    aws = aws.ffm
-  }
-
-  s3_bucket_name = module.s3_bucket.bucket_name
-  file_name      = "meter_data.csv"
-  file_source    = "./data/meter_data.csv"
-  repository_url = "https://github.com/juic3pow3rs/terraform-aws-sagemaker-notebook.git"
+  repository_url = "https://github.com/juic3pow3rs/terraform-aws-sagemaker-notebook-nlp.git"
 
   environment      = local.environment
   role             = local.role
