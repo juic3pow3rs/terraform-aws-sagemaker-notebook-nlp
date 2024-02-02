@@ -21,3 +21,9 @@
 5. Run ```terraform init```, ```terrafrom plan``` & then ```terraform apply```
 
 ## Note multiple deployments are not possible unless some modifications in the naming and the state.
+
+# Additional Info
+
+Text Classification Models Tensorflow: https://sagemaker.readthedocs.io/en/stable/algorithms/text/text_classification_tensorflow.html
+SageMaker Instance Size recommendation: https://docs.aws.amazon.com/sagemaker/latest/dg/text-classification-tensorflow.html#text-classification-tensorflow-instances
+SageMaker Pricing: https://aws.amazon.com/sagemaker/pricing/
